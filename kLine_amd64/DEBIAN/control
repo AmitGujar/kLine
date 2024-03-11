@@ -1,0 +1,8 @@
+Package: kLine
+Version: 1.0.0 
+Section: base 
+Priority: optional 
+Architecture: amd64
+Depends: bash
+Maintainer: AmitGujar
+Description: A command-line tool for managing Kubernetes clusters and namespaces with ease.
