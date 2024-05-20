@@ -5,7 +5,11 @@ COPY . .
 
 RUN go build -o kline cmd/main.go 
 
-FROM alpine:latest AS runner
-COPY --from=builder /src/app/kline /usr/local/bin/
+FROM ubuntu:noble AS runner
 
-CMD [ "kline" , "version"]
+COPY --from=builder /src/app/kline /usr/local/bin/
+RUN chmod 777 /usr/local/bin/kline
+
+ENTRYPOINT [ "kline" ]
+
+CMD ["--version"]
